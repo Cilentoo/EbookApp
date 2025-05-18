@@ -1,6 +1,5 @@
 import { Book } from '../models/Book';
 import { Chapter } from '../models/Chapter';
-import { Comment } from '../models/Comment';
 import * as storage from '../storage/asyncStorage';
 import { generateId } from '../utils/fileUtils';
 
