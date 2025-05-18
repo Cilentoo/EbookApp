@@ -1,8 +1,8 @@
 export interface Comment {
     id: string;
-    bookId: string;
-    chapterId?: string;
-    userId: string;
     text: string;
+    bookId: string; 
+    chapterId: string;
     createdAt: number;
+    updatedAt: number;
 }

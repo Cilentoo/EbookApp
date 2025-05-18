@@ -1,4 +1,6 @@
 import { Book } from '../models/Book';
+import { Chapter } from '../models/Chapter';
+import { Comment } from '../models/Comment';
 import * as storage from '../storage/asyncStorage';
 
 export const getAllBooks = async (): Promise<Book[]> => {
@@ -43,3 +45,16 @@ export const updateBook = async (id: string, bookData: Partial<Book>): Promise<B
     await storage.saveBooks(books);
     return updatedBook;
 }
+
+export const deleteBook = async (id: string): Promise<void> => {
+  const books = await storage.getBooks();
+  const chapters = await storage.getChapters();
+  const comments = await storage.getComments();
+  
+  const filteredBooks = books.filter(book => book.id !== id);
+  const filteredChapters = chapters.filter(chapter => chapter.bookId !== id);
+  
+  
+  await storage.saveBooks(filteredBooks);
+  await storage.saveChapters(filteredChapters);
+};
