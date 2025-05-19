@@ -137,3 +137,11 @@ export const deleteChapter = async (id: string): Promise<void> => {
         await storage.saveBooks(books);
     }
 };
+
+export function getCommentsByBookAndChapter(bookId: string, chapterId: string) {
+    throw new Error('Function not implemented.');
+}
+export function addComment(arg0: { text: string; bookId: string; chapterId: string; }) {
+    throw new Error('Function not implemented.');
+}
+
