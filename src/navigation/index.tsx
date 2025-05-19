@@ -5,7 +5,6 @@ import { useAuth } from '../context/AuthContext';
 import AuthStack from './AuthStack';
 import AuthorStack from './AuthorStack';
 import ReaderStack from './ReaderStack';
-import { LoadingScreen } from '../screen/utils/LoadingScreen';
 import { UserRole } from '../models/User';
 
 export type RootStackParamList = {
@@ -19,9 +18,6 @@ const Stack = createNativeStackNavigator<RootStackParamList>();
 const AppNavigation: React.FC = () => {
   const { user, loading } = useAuth();
   
-  if (loading) {
-    return <LoadingScreen />;
-  }
   
   return (
     <NavigationContainer>
