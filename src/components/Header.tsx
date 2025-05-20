@@ -17,6 +17,9 @@ interface HeaderProps {
   rightAction?: () => void;
   rightIcon?: string;
   rightText?: string;
+  leftAction?: () => void;
+  leftIcon? : string; 
+  leftText?: string;
 }
 
 const Header: React.FC<HeaderProps> = ({
@@ -26,6 +29,9 @@ const Header: React.FC<HeaderProps> = ({
   rightAction,
   rightIcon,
   rightText,
+  leftAction,
+  leftIcon, 
+  leftText
 }) => {
   const { user } = useAuth();
   

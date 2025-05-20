@@ -13,7 +13,7 @@ const BookCreateScreen: React.FC = () => {
   const handleSave = async (bookData: Partial<Book>) => {
     try {
       const newBook = await createBook(bookData);
-      navigation.navigate('BookEdit', { bookId: newBook.id });
+      navigation.navigate('ChapterCreate', { bookId: newBook.id });
     } catch (error) {
       Alert.alert('Erro', 'Não foi possível criar o livro.');
     }

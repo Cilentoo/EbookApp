@@ -45,22 +45,12 @@ export const getChapters = async (): Promise<Chapter[]> => {
 };
 
 export const saveComments = async (comments: Comment[]): Promise<void> => {
-  try {
-    await AsyncStorage.setItem(COMMENTS_STORAGE_KEY, JSON.stringify(comments));
-  } catch (error) {
-    console.error('Erro ao salvar comentários:', error);
-    throw error;
-  }
+  await AsyncStorage.setItem('comments', JSON.stringify(comments));
 };
 
 export const getComments = async (): Promise<Comment[]> => {
-    try{
-        const comments = await AsyncStorage.getItem(COMMENTS_STORAGE_KEY);
-        return comments ? JSON.parse(comments) : [];
-    }catch (error) {
-        console.error('Error retrieving comments:', error);
-        return [];
-    }
+    const data = await AsyncStorage.getItem('comments');
+    return data ? JSON.parse(data) : [];
 };
 
 export const saveImage = async (key: string, imageUri: string): Promise<void>=> {

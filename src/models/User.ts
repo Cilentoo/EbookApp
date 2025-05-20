@@ -21,7 +21,7 @@ export const PREDEFINED_USERS: User[] = [
     {
         id:'reader_user',
         username: 'duda',
-        role: UserRole.AUTHOR,
+        role: UserRole.READER,
         displaysName: 'Tchutchuca',
     }
 ]
